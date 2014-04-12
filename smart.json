@@ -1,0 +1,8 @@
+{
+  "name": "elasticsearch",
+  "description": "Meteor interface for ES, provides easy methods to river meteor collections aswell. ES: Open Source, Distributed, RESTful Search Engine",
+  "homepage": "https://github.com/andrewreedy/meteor-elasticsearch",
+  "author": "Andrew Reedy",
+  "version": "0.0.1",
+  "git": "https://github.com/andrewreedy/meteor-elasticsearch.git"
+}
