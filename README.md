@@ -28,6 +28,12 @@ mrt --settings settings.json
 ```
 
 ## Meteor Mongo Rivering
+*Simple*
+```javascript
+ES.river.create("tweets", {});
+```
+
+*With Mapping*
 ```javascript
 ES.river.create("tweets", {
   mapping: {
