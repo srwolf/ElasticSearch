@@ -7,7 +7,7 @@
   "git": "https://github.com/andrewreedy/meteor-elasticsearch.git",
   "packages": {
     "log": {
-      "path": "/hangar/log"
+      "git": "https://github.com/andrewreedy/meteor-log.git"
     }
   }
 }
