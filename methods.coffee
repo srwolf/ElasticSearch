@@ -43,15 +43,12 @@ Meteor.methods
       if options.size
         query.body.size = options.size
 
-    console.log query
-
     future = new Future()
 
     ES.search query
     .then (resp) ->
       hits = resp.hits.hits
-      console.log hits
-      Logger.log "elasticsearch", 'Search results for "' + searchQuery + '" returned', hits
+      Logger.log "elasticsearch", 'Search results for "' + searchQuery + '" returned', resp
       future.return hits
     , (err) ->
       console.trace err.message

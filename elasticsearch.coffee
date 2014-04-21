@@ -42,8 +42,6 @@ ES.river =
       if gridfs then settings.mongodb.servers = gridfs
       if filter then settings.mongodb.servers = filter
 
-      console.log settings
-
       HTTP.put "http://#{Meteor.settings.elasticsearch.host}/_river/#{collection}/_meta", {data: settings}, (err, res) ->
         if err
           Logger.log "elasticsearch", "Error creating river for #{collection} collection."
@@ -84,7 +82,6 @@ ES.river =
           type: collection
           body: options.mapping
         , Meteor.bindEnvironment((err, result) ->
-          console.log err, result
           Logger.log "elasticsearch", "Put #{collection} mapping."
 
           delete options.mapping
