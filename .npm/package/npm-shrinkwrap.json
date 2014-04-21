@@ -7,7 +7,7 @@
           "version": "0.4.0",
           "dependencies": {
             "has-color": {
-              "version": "0.1.6"
+              "version": "0.1.7"
             },
             "ansi-styles": {
               "version": "1.0.0"
@@ -24,7 +24,7 @@
           "version": "2.4.1"
         },
         "bluebird": {
-          "version": "1.2.2"
+          "version": "1.2.3"
         }
       }
     }

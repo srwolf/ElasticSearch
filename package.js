@@ -7,6 +7,17 @@ Npm.depends({
 });
 
 Package.on_use(function (api, where) {
+  api.use([
+    'coffeescript',
+    'http',
+    'log'
+  ], ['server']);
+
+  api.add_files([
+    'elasticsearch.coffee',
+    'methods.coffee'
+  ], ['server']);
+
+
   api.export('ES');
-  api.add_files('elasticsearch.js', ['server']);
 });
