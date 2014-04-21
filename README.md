@@ -4,9 +4,6 @@ Elasticsearch client for meteor server side. I haven't ventured into giving the 
 
 *Includes the official low-level Elasticsearch client for Node.js and the browser pack*
 
-[![Build Status](https://travis-ci.org/elasticsearch/elasticsearch-js.png?branch=2.1)](https://travis-ci.org/elasticsearch/elasticsearch-js?branch=2.1) [![Coverage Status](https://coveralls.io/repos/elasticsearch/elasticsearch-js/badge.png?branch=2.1)](https://coveralls.io/r/elasticsearch/elasticsearch-js?branch=2.1) [![Dependencies up to date](https://david-dm.org/elasticsearch/elasticsearch-js.png)](https://david-dm.org/elasticsearch/elasticsearch-js)
-
-
 ### Installation
 ```bash
 mrt add elasticsearch
@@ -16,9 +13,10 @@ mrt add elasticsearch
 Meteor Elasticsearch automatically creates the client instance from the configuration you put in your settings file. Here is an example settings.json file.
 ```json
 {
+  "app_name": "The Dopest Search"
   "elasticsearch": {
     "host": "localhost:9201",
-    "log: 'trace"
+    "meteorLogger": true
   }
 }
 
@@ -27,6 +25,48 @@ Meteor Elasticsearch automatically creates the client instance from the configur
 *If you are not sure how to use a settings file*
 ```bash
 mrt --settings settings.json
+```
+
+## Meteor Mongo Rivering
+```javascript
+ES.river.create("tweets", {
+  mapping: {
+    blocks: {
+      properties: {
+        content: {
+          type: "string",
+          index: "analyzed"
+        },
+        name: {
+          type: "string",
+          index: "analyzed"
+        }
+      }
+    }
+  }
+}, function(err, res) {
+  console.log(res);
+});
+```
+
+## Meteor Search
+```javascript
+var search = {
+  tweets: function(query) {
+    return Meteor.call("search", query, {
+      collection: "tweets",
+      fields: ["name", "content"],
+      size: 5
+    }, function(err, res) {
+      var results;
+      if (err) {
+        return console.log(err);
+      } else {
+        return res;
+      }
+    });
+  }
+};
 ```
 
 ## Features
@@ -94,21 +134,3 @@ ES.search({
 ```
 
 More examples and detailed information about each method are available [here](http://www.elasticsearch.org/guide/en/elasticsearch/client/javascript-api/current/index.html)
-
-## License
-
-This software is licensed under the Apache 2 license, quoted below.
-
-    Copyright (c) 2014 Elasticsearch <http://www.elasticsearch.org>
-
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
-
-       http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
