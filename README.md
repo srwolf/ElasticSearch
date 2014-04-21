@@ -29,23 +29,24 @@ mrt --settings settings.json
 
 ## Meteor Mongo Rivering
 
-*This package takes advantage of the MongoDB River for ES and is required to use the river methods:*
+### This package takes advantage of the MongoDB River for ES and is required to use the river methods:
 
 This plugin uses MongoDB as datasource to store data in ElasticSearch. Filtering and transformation are also possible.
 See the [wiki](https://github.com/richardwilly98/elasticsearch-river-mongodb/wiki) for more details.
 
 In order to install the plugin, simply run: ```bin/plugin --install com.github.richardwilly98.elasticsearch/elasticsearch-river-mongodb/2.0.0```
 
-*The river plugin also requires that your MongoDB is set up as a replica set, read this for more information:*
+#### The river plugin also requires that your MongoDB is set up as a replica set, read this for more information:
 
 [MongoDB Replica Set for Development Guide](http://docs.mongodb.org/manual/tutorial/deploy-replica-set-for-testing/)
 
-*Simple*
+#### Simple River
 ```javascript
 ES.river.create("tweets", {});
 ```
 
-*With Mapping*
+#### With Mapping
+*(all the options found in the es river wiki can be used in the second parameter)*
 ```javascript
 ES.river.create("tweets", {
   mapping: {
