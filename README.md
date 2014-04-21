@@ -1,6 +1,6 @@
 Meteor Elasticsearch
 ===================
-Elasticsearch client for meteor server side. Added methods to easily manage rivering mongo collections and meteor methods to search fromt he client side.
+Elasticsearch client for meteor server side. Added methods to easily manage rivering mongo collections and a meteor method to search from the client side.
 
 *Includes the official low-level Elasticsearch client for Node.js and the browser pack*
 
