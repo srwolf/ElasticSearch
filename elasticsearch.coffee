@@ -38,9 +38,9 @@ ES.river =
 
       #if options then settings.mongodb.options = options
       if servers then settings.mongodb.servers = servers
-      if credentials then settings.mongodb.servers = credentials
-      if gridfs then settings.mongodb.servers = gridfs
-      if filter then settings.mongodb.servers = filter
+      if credentials then settings.mongodb.credentials = credentials
+      if gridfs then settings.mongodb.gridfs = gridfs
+      if filter then settings.mongodb.filter = filter
 
       HTTP.put "http://#{Meteor.settings.elasticsearch.host}/_river/#{collection}/_meta", {data: settings}, (err, res) ->
         if err
