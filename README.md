@@ -13,7 +13,7 @@ mrt add elasticsearch
 Meteor Elasticsearch automatically creates the client instance from the configuration you put in your settings file. Here is an example settings.json file.
 ```json
 {
-  "app_name": "The Dopest Search"
+  "app_name": "The Dopest Search",
   "elasticsearch": {
     "host": "localhost:9201",
     "meteorLogger": true
