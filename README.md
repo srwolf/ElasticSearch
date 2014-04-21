@@ -1,6 +1,6 @@
 Meteor Elasticsearch
 ===================
-Elasticsearch client for meteor server side. I haven't ventured into giving the client any privilages yet. Also working on methods to easily river meteor collections into ES.
+Elasticsearch client for meteor server side. Added methods to easily manage rivering mongo collections and meteor methods to search fromt he client side.
 
 *Includes the official low-level Elasticsearch client for Node.js and the browser pack*
 
