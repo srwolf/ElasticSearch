@@ -27,6 +27,9 @@ ES.river =
       db = process.env.MONGO_URL.split('/')
       db = db[db.length-1]
 
+      if db.indexOf('?') != -1
+        db = db.substring 0, db.indexOf('?')
+
       settings =
         type: "mongodb"
         mongodb:
