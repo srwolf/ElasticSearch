@@ -17,6 +17,7 @@ ES.river =
   create: (collection, options, callback) ->
 
     index = options && options.index || Meteor.settings.app_name.replace(/\s+/g, '-').toLowerCase() || "meteor-river"
+    mongodbOptions = options && options.options
     servers = null
     credentials = null
     gridfs = null
@@ -35,6 +36,7 @@ ES.river =
         mongodb:
           db: db
           collection: collection
+          options: mongodbOptions
         index:
           name: index
           type: collection
