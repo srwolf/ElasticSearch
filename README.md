@@ -70,6 +70,28 @@ ES.river.create("tweets", {
 });
 ```
 
+#### With River Options
+```javascript
+ES.river.create("tweets", {
+  options: {
+    "secondary_read_preference" : true,
+    "drop_collection": ${mongo.drop.collection},
+    "exclude_fields": ${mongo.exclude.fields},
+    "include_fields": ${mongo.include.fields},
+    "include_collection": ${mongo.include.collection},
+    "import_all_collections": ${mongo.import.all.collections},
+    "initial_timestamp": {
+      "script_type": ${mongo.initial.timestamp.script.type},
+      "script": ${mongo.initial.timestamp.script}
+    },
+    "skip_initial_import" : ${mongo.skip.initial.import},
+    "store_statistics" : ${mongo.store.statistics}
+  }
+}, function(err, res) {
+  console.log(res);
+});
+```
+
 ## Meteor Search
 ```javascript
 var search = {
