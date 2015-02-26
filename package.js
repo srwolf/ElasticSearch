@@ -1,7 +1,8 @@
 Package.describe({
+  name: "bigdata:elasticsearch",
   summary: "Meteor interface for ES, provides easy methods to river meteor collections aswell. ES: Open Source, Distributed, RESTful Search Engine",
-  version: "0.0.6",
-  githubUrl: "https://github.com/andrewreedy/meteor-elasticsearch.git"
+  version: "1.0.0",
+  githubUrl: "https://github.com/meteorbigdata/elasticsearch.git"
 });
 
 Npm.depends({
@@ -9,17 +10,17 @@ Npm.depends({
 });
 
 Package.onUse(function (api, where) {
-  api.versionsFrom("METEOR@0.9.0");
+  api.versionsFrom("METEOR@1.0");
 
   api.use([
     'coffeescript',
     'http',
-    'mrt:log'
+    'bigdata:logs'
   ], ['server']);
 
   api.addFiles([
-    'elasticsearch.coffee',
-    'methods.coffee'
+    'elasticsearch.js',
+    'methods.js'
   ], ['server']);
 
   api.export('ES');

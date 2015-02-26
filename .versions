@@ -1,0 +1,11 @@
+base64@1.0.2
+bigdata:elasticsearch@1.0.0
+bigdata:logs@1.0.1
+check@1.0.4
+coffeescript@1.0.5
+ejson@1.0.5
+http@1.0.10
+json@1.0.2
+meteor@1.1.4
+underscore@1.0.2
+url@1.0.3

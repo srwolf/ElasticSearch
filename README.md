@@ -6,7 +6,7 @@ Elasticsearch client for meteor server side. Added methods to easily manage rive
 
 ### Installation
 ```bash
-mrt add elasticsearch
+meteor add bigdata:elasticsearch
 ```
 
 ### Configuration
@@ -24,7 +24,7 @@ Meteor Elasticsearch automatically creates the client instance from the configur
 
 *If you are not sure how to use a settings file*
 ```bash
-mrt --settings settings.json
+meteor --settings settings.json
 ```
 
 ## Meteor Mongo Rivering
