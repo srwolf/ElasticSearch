@@ -1,4 +1,4 @@
-var ES, Fiber, elasticsearch;
+//var ES, Fiber, elasticsearch;
 
 Fiber = Npm.require('fibers');
 
@@ -170,4 +170,4 @@ ES.river = {
   }
 };
 
-this.ES = ES;
+//this.ES = ES;
